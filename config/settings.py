@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'accounts',  # new app
     'pages',
+    'articles',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Accra'
 
 USE_I18N = True
 
@@ -139,6 +140,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'vanexcel.django@gmail.com'
 EMAIL_HOST = 'smtp.mailgun.org'
 EMAIL_HOST_USER = 'postmaster@sandbox225e4ab489874bc18175b10e3b2a2bef.mailgun.org'
-EMAIL_HOST_PASSWORD = '1c4bb42f2dba6e19a2cbf213f04d00e4-181449aa-e484dd60'
+EMAIL_HOST_PASSWORD = '62ce58151092cae5de2253667832292b-181449aa-d9b488a0'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

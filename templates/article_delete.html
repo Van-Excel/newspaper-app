@@ -7,10 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-<a href="{% url 'home'%}">Home</a>
-
     {%block content%}
-   
+    <form action="" method="post">
+        {%csrf_token%}
+        <p>Are you sure you want to delete {{article.title}}</p>
+        <button type="submit">Yes</button>
+
+    </form>
+    
 
     {%endblock content%}
     
