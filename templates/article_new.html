@@ -7,17 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-<a href="{% url 'home'%}">Home</a>
-{%if user.is_authenticated%}
-<a href="{%url 'article_new'%}">New BlogPost</a>
-
-{%endif%}
-
+    {%extends 'base.html' %}
 
     {%block content%}
-   
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">Create</button>
+    </form>
 
-    {%endblock content%}
-    
+    {%endblock content %}
 </body>
 </html>
