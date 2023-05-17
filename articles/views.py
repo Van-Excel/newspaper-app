@@ -15,23 +15,23 @@ class ArticlesListView(LoginRequiredMixin, ListView):
     template_name = 'article_list.html'
 
 
-class ArticleUpdateView(LoginRequiredMixin, UpdateView, UserPassesTestMixin):
+class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Article
     fields = ('title', 'body',)
     template_name = 'article_edit.html'
 
     def test_func(self):
-        obj = self.get_object
+        obj = self.get_object()
         return obj.author == self.request.user
 
 
-class ArticleDeleteView(LoginRequiredMixin, DeleteView, UserPassesTestMixin):
+class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Article
     template_name = 'article_delete.html'
     success_url = reverse_lazy('article_list')
 
     def test_func(self):
-        obj = self.get_object
+        obj = self.get_object()
         return obj.author == self.request.user
 
 

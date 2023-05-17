@@ -19,6 +19,12 @@
         <a href="{%url 'article_edit' article.pk %}">Edit</a>
         <a href="{%url 'article_delete' article.pk %}">Delete</a>
     </div>
+    <div>
+        {% for comment in article.comments.all %}
+        <p>{{comment.author}}</p>
+        <p>{{comment}}</p>
+    </div>
+    {% endfor %}
     
 
     {%endblock content%}
